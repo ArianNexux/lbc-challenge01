@@ -1,4 +1,6 @@
 ## lbc-challenge01
+# Requirements
+- NodeJS(v16 >) Installed
 
 # Installation
 
