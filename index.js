@@ -3,7 +3,7 @@ function isABalancedString(par) {
         return false
     }
     par = par.split("")
-    parFiltered = par.filter(function (e) {
+    let parFiltered = par.filter(function (e) {
         return ["(", ")", "[", "]", "{", "}"].includes(e)
     });
     console.log(parFiltered);
