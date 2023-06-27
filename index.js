@@ -6,7 +6,7 @@ function isABalancedString(par) {
     let parFiltered = par.filter(function (e) {
         return ["(", ")", "[", "]", "{", "}"].includes(e)
     });
-    console.log(parFiltered);
+
     for (let i = 0; i < parFiltered.length; i++) {
         let findCloseChar = parFiltered[i] == "(" ? ")" : parFiltered[i] == "[" ? "]" : parFiltered[i] == "{" ? "}" : ""
         if (findCloseChar != "") {
