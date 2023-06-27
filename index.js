@@ -23,3 +23,5 @@ function isABalancedString(par) {
 }
 
 console.log(isABalancedString("(((())))("))
+console.log(isABalancedString("()}}{{"))
+console.log(isABalancedString("(([(())]))"))
