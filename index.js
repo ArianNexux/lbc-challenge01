@@ -3,23 +3,24 @@ function isABalancedString(par) {
         return false
     }
     par = par.split("")
-
-    for (let i = 0; i < par.length; i++) {
-        let findCloseChar = par[i] == "(" ? ")" : par[i] == "[" ? "]" : par[i] == "{" ? "}" : ""
+    parFiltered = par.filter(function (e) {
+        return e == "(" || e == ")" || e == "[" || e == "]" || e == "{" || e == "}"
+    });
+    for (let i = 0; i < parFiltered.length; i++) {
+        let findCloseChar = parFiltered[i] == "(" ? ")" : parFiltered[i] == "[" ? "]" : parFiltered[i] == "{" ? "}" : ""
         if (findCloseChar != "") {
-            for (let j = i; j < par.length; j++) {
+            for (let j = i; j < parFiltered.length; j++) {
                 if (i != j)
-                    if (par[j] == findCloseChar) {
-                        par[i] = 1
-                        par[j] = 1
+                    if (parFiltered[j] == findCloseChar) {
+                        parFiltered[i] = 1
+                        parFiltered[j] = 1
                         break;
                     }
             }
         }
     }
 
-    return par.every(function (e) { return e == 1 });
-
+    return parFiltered.every(function (e) { return e == 1 });
 }
 
 module.exports.isABalancedString = isABalancedString
